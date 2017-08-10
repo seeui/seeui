@@ -1,6 +1,6 @@
 {
   "name": "seeui",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "A Modern UI Kit based on Preact",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://gitlab.baidu.com/csfe-ucop/seeui.git"
+    "url": "http://github.com/seeui/seeui.git"
   },
   "keywords": [
     "preact",
@@ -20,9 +20,9 @@
   "author": "cgzero",
   "license": "MIT",
   "bugs": {
-    "url": "http://gitlab.baidu.com/csfe-ucop/seeui/issues"
+    "url": "http://github.com/seeui/seeui/issues"
   },
-  "homepage": "http://gitlab.baidu.com/csfe-ucop/seeui",
+  "homepage": "http://github.com/seeui/seeui",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
