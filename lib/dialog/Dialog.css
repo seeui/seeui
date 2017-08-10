@@ -1,0 +1,60 @@
+.cui-dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.3);
+  display: none;
+  z-index: 1000;
+}
+.cui-dialog.show {
+  display: block;
+}
+.cui-dialog-wrap {
+  width: 360px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  margin-left: -200px;
+  margin-top: -70px;
+  background: #fff;
+}
+.cui-dialog-header {
+  margin: 25px 0 10px;
+  font-size: 22px;
+  text-align: center;
+}
+.cui-dialog-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.cui-dialog-body {
+  max-height: 70px;
+  margin: 15px 0;
+  font-size: 14px;
+  overflow: hidden;
+  line-height: 1.2;
+}
+.cui-dialog-footer {
+  zoom: 1;
+}
+.cui-dialog-footer:before,
+.cui-dialog-footer:after {
+  content: "";
+  display: table;
+}
+.cui-dialog-footer:after {
+  clear: both;
+}
+.cui-dialog-footer-item {
+  float: right;
+  margin-left: 5px;
+}
+.cui-dialog-count-down {
+  text-align: right;
+}

@@ -1,0 +1,37 @@
+.cui-pager {
+  zoom: 1;
+  list-style: none;
+  font-size: 16px;
+}
+.cui-pager:before,
+.cui-pager:after {
+  content: "";
+  display: table;
+}
+.cui-pager:after {
+  clear: both;
+}
+.cui-pager-item {
+  float: left;
+  padding: 9px 13px;
+  height: 20px;
+  line-height: 20px;
+  margin: 3px;
+  color: #333;
+  cursor: pointer;
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  -o-transition: all 0.15s;
+  -ms-transition: all 0.15s;
+  transition: all 0.15s;
+}
+.cui-pager-item:hover {
+  background-color: #eee;
+}
+.cui-pager-item.state-current {
+  background-color: #38f;
+  color: #fff;
+}
+.cui-pager-item.state-current.state-current {
+  cursor: default;
+}

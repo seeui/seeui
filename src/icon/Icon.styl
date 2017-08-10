@@ -1,0 +1,141 @@
+@require '../css/base'
+
+@font-face
+    font-family: "seeui-mobile-icon"
+    src:
+        url('./font/icon.woff?t=1499157214944') format('woff'), /* chrome, firefox */
+        url('./font/icon.ttf?t=1499157214944') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+        url('./font/icon.svg?t=1499157214944#seeui-mobile-icon') format('svg') /* iOS 4.1- */
+
+.{$-cui-class-prefix}-icon
+    font-family:"seeui-mobile-icon" !important
+    font-size:16px
+    font-style:normal
+    display: inline-block
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+.{$-cui-class-prefix}-i-check:before
+    content: "\e645"
+
+.{$-cui-class-prefix}-i-close:before
+    content: "\e646"
+
+.{$-cui-class-prefix}-i-favor-fill:before
+    content: "\e64b"
+
+.{$-cui-class-prefix}-i-favor:before
+    content: "\e64c"
+
+.{$-cui-class-prefix}-i-loading:before
+    content: "\e64f"
+
+.{$-cui-class-prefix}-i-round-check-fill:before
+    content: "\e656"
+
+.{$-cui-class-prefix}-i-round-check:before
+    content: "\e657"
+
+.{$-cui-class-prefix}-i-round-close-fill:before
+    content: "\e658"
+
+.{$-cui-class-prefix}-i-round-close:before
+    content: "\e659"
+
+.{$-cui-class-prefix}-i-search:before
+    content: "\e65c"
+
+.{$-cui-class-prefix}-i-unfold:before
+    content: "\e661"
+
+.{$-cui-class-prefix}-i-back:before
+    content: "\e679"
+
+.{$-cui-class-prefix}-i-more:before
+    content: "\e684"
+
+.{$-cui-class-prefix}-i-question-fill:before
+    content: "\e690"
+
+.{$-cui-class-prefix}-i-question:before
+    content: "\e691"
+
+.{$-cui-class-prefix}-i-top:before
+    content: "\e69e"
+
+.{$-cui-class-prefix}-i-right:before
+    content: "\e6a3"
+
+.{$-cui-class-prefix}-i-refresh:before
+    content: "\e6a4"
+
+.{$-cui-class-prefix}-i-delete-fill:before
+    content: "\e6a6"
+
+.{$-cui-class-prefix}-i-delete:before
+    content: "\e6b4"
+
+.{$-cui-class-prefix}-i-home:before
+    content: "\e6b8"
+
+.{$-cui-class-prefix}-i-home-fill:before
+    content: "\e6bb"
+
+.{$-cui-class-prefix}-i-square-check-fill:before
+    content: "\e6d4"
+
+.{$-cui-class-prefix}-i-square:before
+    content: "\e6d5"
+
+.{$-cui-class-prefix}-i-square-check:before
+    content: "\e6d6"
+
+.{$-cui-class-prefix}-i-round:before
+    content: "\e6d7"
+
+.{$-cui-class-prefix}-i-fold:before
+    content: "\e6de"
+
+.{$-cui-class-prefix}-i-info-fill:before
+    content: "\e6e4"
+
+.{$-cui-class-prefix}-i-info:before
+    content: "\e6e5"
+
+.{$-cui-class-prefix}-i-share:before
+    content: "\e6f3"
+
+.{$-cui-class-prefix}-i-people-fill:before
+    content: "\e735"
+
+.{$-cui-class-prefix}-i-people:before
+    content: "\e736"
+
+.{$-cui-class-prefix}-i-radio-box:before
+    content: "\e75b"
+
+.{$-cui-class-prefix}-i-radio-box-fill:before
+    content: "\e763"
+
+.{$-cui-class-prefix}-i-add:before
+    content: "\e767"
+
+.{$-cui-class-prefix}-i-move:before
+    content: "\e768"
+
+.{$-cui-class-prefix}-i-warn-fill:before
+    content: "\e641"
+
+.{$-cui-class-prefix}-i-warn:before
+    content: "\e642"
+
+.{$-cui-class-prefix}-i-loading
+    animation: cui-loading-rotate 1s linear
+    animation-iteration-count: infinite
+    transform-origin: center center
+
+@keyframes cui-loading-rotate
+    0%
+        transform: rotate(-365deg)
+    100%
+        transform: rotate(0)

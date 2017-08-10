@@ -1,0 +1,100 @@
+// 初始化
+global-reset()
+
+body
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", sans-serif
+
+header
+    height: 70px
+    background-color: #f4f4f4
+
+    .logo
+        width: 28px
+        vertical-align: middle
+        margin-top: -6px
+        margin-right: 10px
+
+    h1
+        line-height: 70px
+        font-size: 28px
+        color: #666
+        margin-left: 30px
+
+.content
+    clearfix()
+
+.nav
+    width: 300px
+    padding: 30px
+    font-size: 16px
+    float: left
+
+    &.fixed
+        fixed: top 0
+
+    ul
+        background-color: #f4f4f4
+        padding: 20px 0
+
+        a
+            height: 36px
+            line-height: 36px
+            padding: 0 25px
+            color: #666
+            text-decoration: none
+            display: block
+            transition: all .1s
+
+            &:hover
+                background-color: darken(#f4f4f4, 5%)
+
+            &:active
+                background-color: darken(#f4f4f4, 10%)
+
+.panel-wrap
+    margin-left: 360px
+
+.panel
+    margin: 5px 55px 30px 30px
+
+    h2
+        margin-bottom: 20px
+        padding-top: 30px
+        font-size: 30px
+        font-weight: 400
+
+    h3
+        margin: 15px 0 10px
+        font-size: 22px
+
+    p
+        margin-bottom: .5em
+        line-height: 1.4
+
+.md-container
+    margin-top: 30px
+    margin-bottom: 60px
+
+    h1
+        font-size: 24px
+        margin-top: 25px
+        margin-bottom: 20px
+
+    table
+        border-collapse: collapse
+        font-size: 16px
+        line-height: 1.4
+        width: 100%
+
+        th
+            font-weight: 400
+
+        td,
+        th
+            border: 1px solid #eee
+            padding: 10px
+
+        code
+            display: inline-block
+            padding: 0 2px
+            background-color: #f4f4f4

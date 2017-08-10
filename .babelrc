@@ -1,0 +1,32 @@
+{
+    "env": {
+        "development": {
+            "presets": [
+                "es2015",
+                "react",
+                "stage-0"
+            ],
+            "plugins": [
+                ["transform-react-jsx", {"pragma": "h"}]
+            ]
+        },
+        "production": {
+            "presets": [
+                [
+                    "es2015",
+                    {
+                        "modules": "umd",
+                        "loose": true
+                    }
+                ],
+                "react",
+                "stage-0"
+            ],
+            "plugins": [
+                ["transform-react-jsx", {"pragma": "h"}],
+                "external-helpers",
+                "external-helpers-insert-require"
+            ]
+        }
+    }
+}

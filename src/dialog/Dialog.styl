@@ -1,0 +1,54 @@
+@require '../css/base'
+
+.{$-cui-class-prefix}-dialog {
+    fixed: top 0 right 0 bottom 0 left 0;
+    background-color: rgba(0, 0, 0, .3);
+    display: none;
+    z-index: 1000;
+
+    &.show {
+        display: block;
+    }
+
+    &-wrap {
+        width: 360px;
+        absolute: top 50% left 50%;
+        padding: 20px;
+        margin-left: -200px;
+        margin-top: -70px;
+        background: #fff;
+    }
+
+    &-header {
+        margin: 25px 0 10px;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    &-close {
+        absolute: top 10px right 15px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    &-body {
+        max-height: 70px;
+        margin: 15px 0;
+        font-size: 14px;
+        overflow: hidden;
+        line-height: 1.2;
+    }
+
+    &-footer {
+        clearfix();
+    }
+
+    &-footer-item {
+        float: right;
+        margin-left: 5px;
+    }
+
+    &-count-down {
+        text-align: right;
+    }
+}

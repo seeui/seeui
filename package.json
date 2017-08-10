@@ -1,0 +1,63 @@
+{
+  "name": "seeui",
+  "version": "0.2.0",
+  "description": "A Modern UI Kit based on Preact",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "fecs src --type=js --reporter=baidu || true",
+    "build": "rimraf lib && NODE_ENV=production gulp build",
+    "start": "npm run lint && webpack-dev-server --config ./tool/webpack.dev.babel.js --devtool eval --progress --inline --colors --hot --content-base dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.baidu.com/csfe-ucop/seeui.git"
+  },
+  "keywords": [
+    "preact",
+    "seeui",
+    "javascript"
+  ],
+  "author": "cgzero",
+  "license": "MIT",
+  "bugs": {
+    "url": "http://gitlab.baidu.com/csfe-ucop/seeui/issues"
+  },
+  "homepage": "http://gitlab.baidu.com/csfe-ucop/seeui",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-external-helpers-insert-require": "^1.0.2",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-loose": "^8.0.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.0.0",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-babel-external-helpers": "^2.0.2",
+    "gulp-remove-lines": "^0.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-stylus": "^2.6.0",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.29.0",
+    "markdown-loader": "^2.0.1",
+    "nib": "^1.1.2",
+    "rimraf": "^2.6.1",
+    "style-loader": "^0.18.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "preact": "^8.1.0",
+    "preact-compat": "^3.16.0"
+  }
+}
