@@ -6,7 +6,7 @@
  */
 
 import {h} from 'preact';
-import {render, unmountComponentAtNode} from 'preact-compat';
+import {render, unmountComponentAtNode} from './preactExtend';
 
 export default class Singleton {
     constructor(component) {

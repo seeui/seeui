@@ -6,71 +6,71 @@
 
 import {h, Component} from 'preact';
 import classNames from '../util/classnames';
+import {map} from '../util/lang';
+
 import Dialog from './Dialog';
+import Singleton from '../util/Singleton';
+
+let defaultButtons = {
+    confirm: {
+        role: 'confirm',
+        type: 'primary',
+        value: '确定',
+        size: 'large'
+    },
+    cancel: {
+        role: 'cancel',
+        type: 'default',
+        value: '取消',
+        size: 'large'
+    }
+};
 
 export default class Confirm extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            show: false
-        };
-    }
-
-    onConfirmShow() {
-        this.props.onShow && this.props.onShow();
-    }
-
-    onConfirmHide(data) {
-        if (data && (data.type === 'closeClick' || data.type === 'maskClick')) {
-            this.props.onHide && this.props.onHide();
-        }
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const {remain, show} = nextProps;
-
-        this.setState({
-            show: show
-        });
-    }
+    static defaultProps = {
+        prefixCls: 'cui',
+        hasClose: false,
+        maskClickClose: false,
+        buttons: []
+    };
 
     render() {
-        const {msg, children, title, onHide, onConfirm} = this.props;
+        const {prefixCls, className, children, buttons, onConfirm, onCancel, ...others} = this.props;
 
-        let dialogButtons = [
-            {
-                type: 'primary',
-                value: '确定',
-                size: 'large',
-                onClick: () => {
-                    this.props.onHide && this.props.onHide();
-                    this.props.onConfirm && this.props.onConfirm();
-                }
-            }, {
-                type: 'default',
-                value: '取消',
-                size: 'large',
-                onClick: () => {
-                    this.props.onHide && this.props.onHide();
-                    this.props.onCancel && this.props.onCancel();
+        const confirmCls = classNames({
+            [`${prefixCls}-dialog-confirm`]: true,
+            [className]: className
+        });
+
+        // 配置buttons，必须传role参数
+        let dialogButtons = map(
+            buttons.length ? buttons : [defaultButtons['confirm'], defaultButtons['cancel']],
+            button => {
+                let role = button.role;
+                let defaultButton = defaultButtons[role];
+
+                return {
+                    ...defaultButton,
+                    button,
+                    onClick: () => {
+                        role === 'confirm' && onConfirm && onConfirm();
+                        role === 'cancel' && onCancel && onCancel();
+                    }
                 }
             }
-        ];
+        );
 
         return (
             <Dialog
-                title={title}
-                hasClose={true}
-                show={this.state.show}
+                {...others}
+                className={confirmCls}
                 buttons={dialogButtons}
-                onShow={this.onConfirmShow.bind(this)}
-                onHide={this.onConfirmHide.bind(this)}
-                maskClickClose={true}
             >
                 {children}
             </Dialog>
         );
     }
 }
+
+export const SingleConfirm = new Singleton(Confirm);

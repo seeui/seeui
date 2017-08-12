@@ -2,13 +2,14 @@
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
-title | 弹框标题 | string | -
-hasClose | 是否有关闭按钮 | boolean | true
-show | 显示/隐藏 | boolean | false
-remain | Toast显示时长 | number | 3
-width | 弹框宽度 | number | -
-top | 距顶部距离 | number | -
-onShow | 显示时的handler | Function | -
-onHide | 隐藏时的handler | Function | -
-onConfirm | 点击确定时的handler | Function | -
-onCancel | 点击取消时的handler | Function | -
+show | 是否显示 | boolean | `false`
+width | 内容宽度，需要携带单位 | string | -
+top | 浮层内容到顶部距离,设置后浮层不在垂直居中 | string | -
+hasClose | 是否有关闭按钮 | boolean | `true`
+closeContent | 关闭按钮内容 | string/VDom | `VDom`
+title | 标题内容 | string | -
+buttons | 底部按钮集合 | Array | -
+maskClickClose | 是否点击背景关闭 | boolean | `false`
+onShow | 浮层显示回调 | Function | -
+onHide | 浮层关闭回调，必选，用来控制父组件的状态改变  | Function | -
+className | 额外类名 | string | -

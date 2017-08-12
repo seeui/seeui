@@ -7,7 +7,12 @@
 import {h, Component} from 'preact';
 import classNames from '../util/classnames';
 import {hasClass} from '../util/dom';
+import {map} from '../util/lang';
+
 import Button from '../button/Button';
+import Icon from '../icon/Icon';
+
+import Singleton from '../util/Singleton';
 
 import './Dialog.styl';
 
@@ -45,10 +50,6 @@ export default class Dialog extends Component {
         }
     }
 
-    toggleLockWindow(lock) {
-        // lock ? lockWindow() : unLockWindow();
-    }
-
     onMaskClick(e) {
         const {prefixCls, maskClickClose, onHide} = this.props;
         if (maskClickClose && hasClass(e.target, `${prefixCls}-dialog`)) {
@@ -63,7 +64,6 @@ export default class Dialog extends Component {
     componentDidMount() {
         let {show, onShow} = this.props;
 
-        // show && this.toggleLockWindow(true) && onShow && onShow();
         show && onShow && onShow();
     }
 
@@ -79,18 +79,17 @@ export default class Dialog extends Component {
         this.propsUpdateShow = false;
 
         if (show) {
-            // this.toggleLockWindow(true);
             onShow && onShow();
         }
         else {
-            // this.toggleLockWindow(false);
             onHide && onHide();
         }
     }
 
     // 销毁前如果状态是显示，则需要考虑解锁屏幕
     componentWillUnmount() {
-        // this.props.show && this.toggleLockWindow(false);
+        const {show, onDestroy} = this.props;
+        show && onDestroy && onDestroy();
     }
 
     /**
@@ -121,7 +120,7 @@ export default class Dialog extends Component {
                 onClick={e => onHide({type: 'closeClick'})}
                 className={`${prefixCls}-dialog-close`}
             >
-                {closeContent ? closeContent : '×'}
+                {closeContent ? closeContent : <Icon type="close" />}
             </span>
         );
     }
@@ -135,7 +134,7 @@ export default class Dialog extends Component {
     renderFooter() {
         const {prefixCls, buttons} = this.props;
 
-        let btnsDom = buttons.map(button => {
+        let btnsDom = map(buttons, button => {
             const {type = 'default', value, size = 'large', ...others} = button;
 
             return (
@@ -198,3 +197,5 @@ export default class Dialog extends Component {
         );
     }
 }
+
+export const SingleDialog = new Singleton(Dialog);

@@ -8,25 +8,33 @@ import {h, Component} from 'preact';
 import classNames from '../util/classnames';
 import Dialog from './Dialog';
 
+import Singleton from '../util/Singleton';
+
 export default class Toast extends Component {
+
+    static defaultProps = {
+        remain: 3,
+        hasClose: false
+    };
 
     constructor(props) {
         super(props);
 
         this.state = {
-            remain: props.remain,
-            show: false
+            remain: props.remain
         };
     }
 
     countDown() {
         let self = this;
 
-        let counter = setInterval(function () {
+        this.counter = setInterval(function () {
             if (self.state.remain === 1) {
-                clearInterval(counter);
+                this.counter && clearInterval(this.counter);
+                this.counter = null;
 
-                self.setState({show: false, remain: self.props.remain + 1});
+                self.setState({remain: self.props.remain + 1});
+                self.props.onHide && self.props.onHide();
             }
 
             self.setState({remain: --self.state.remain});
@@ -39,27 +47,29 @@ export default class Toast extends Component {
         this.props.onShow && this.props.onShow();
     }
 
-    onToastHide() {
-        this.props.onHide && this.props.onHide();
+    onToastHide(data) {
+        this.counter && clearInterval(this.counter);
+        this.counter = null;
+
+        this.props.onHide && this.props.onHide(data);
     }
 
+
     componentWillReceiveProps(nextProps) {
-        const {remain, show} = nextProps;
+        const {remain} = nextProps;
 
         this.setState({
-            remain: remain || this.state.remain,
-            show: show
+            remain: remain || this.state.remain
         });
     }
 
     render() {
-        const {msg, children, title} = this.props;
+        const {children, title, ...others} = this.props;
 
         return (
             <Dialog
+                {...others}
                 title={title}
-                hasClose={false}
-                show={this.state.show}
                 onShow={this.onToastShow.bind(this)}
                 onHide={this.onToastHide.bind(this)}
             >
@@ -69,3 +79,5 @@ export default class Toast extends Component {
         );
     }
 }
+
+export const SingleToast = new Singleton(Toast);
