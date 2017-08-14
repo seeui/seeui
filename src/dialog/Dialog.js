@@ -12,8 +12,6 @@ import {map} from '../util/lang';
 import Button from '../button/Button';
 import Icon from '../icon/Icon';
 
-import Singleton from '../util/Singleton';
-
 import './Dialog.styl';
 
 export default class Dialog extends Component {
@@ -197,5 +195,3 @@ export default class Dialog extends Component {
         );
     }
 }
-
-export const SingleDialog = new Singleton(Dialog);

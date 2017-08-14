@@ -51,5 +51,3 @@ export default class Alert extends Component {
         );
     }
 }
-
-export const SingleAlert = new Singleton(Alert);

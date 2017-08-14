@@ -1,31 +1,10 @@
 {
-    "env": {
-        "development": {
-            "presets": [
-                "es2015",
-                "react",
-                "stage-0"
-            ],
-            "plugins": [
-                ["transform-react-jsx", {"pragma": "h"}]
-            ]
-        },
-        "production": {
-            "presets": [
-                [
-                    "es2015",
-                    {
-                        "modules": "umd"
-                    }
-                ],
-                "react",
-                "stage-0"
-            ],
-            "plugins": [
-                ["transform-react-jsx", {"pragma": "h"}],
-                "external-helpers",
-                "external-helpers-insert-require"
-            ]
-        }
-    }
+    "presets": [
+        "es2015",
+        "react",
+        "stage-0"
+    ],
+    "plugins": [
+        ["transform-react-jsx", {"pragma": "h"}]
+    ]
 }

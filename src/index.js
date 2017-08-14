@@ -5,10 +5,14 @@ import Tabs from './tabs/Tabs';
 import Icon from './icon/Icon';
 import Rate from './rate/Rate';
 import Input from './input/Input';
-import Dialog, {SingleDialog} from './dialog/Dialog';
-import Toast, {SingleToast} from './dialog/Toast';
-import Alert, {SingleAlert} from './dialog/Alert';
-import Confirm, {SingleConfirm} from './dialog/Confirm';
+import Dialog from './dialog/Dialog';
+import SingleDialog from './dialog/SingleDialog';
+import Toast from './dialog/Toast';
+import SingleToast from './dialog/SingleToast';
+import Alert from './dialog/Alert';
+import SingleAlert from './dialog/SingleAlert';
+import Confirm from './dialog/Confirm';
+import SingleConfirm from './dialog/SingleConfirm';
 import Tag from './tag/Tag';
 
 export {

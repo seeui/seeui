@@ -9,7 +9,6 @@ import classNames from '../util/classnames';
 import {map} from '../util/lang';
 
 import Dialog from './Dialog';
-import Singleton from '../util/Singleton';
 
 let defaultButtons = {
     confirm: {
@@ -72,5 +71,3 @@ export default class Confirm extends Component {
         );
     }
 }
-
-export const SingleConfirm = new Singleton(Confirm);
