@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["dialog/SingleConfirm.js"],"sourcesContent":["/**\n * @file Single Confirm\n * @author cgzero(cgzero@cgzero.com)\n * @data 2017-08-14\n */\n\nimport Confirm from './Confirm';\nimport Singleton from '../util/Singleton';\n\nexport default new Singleton(Confirm);\n"],"file":"SingleConfirm.js"}

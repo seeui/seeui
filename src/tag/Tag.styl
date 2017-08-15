@@ -1,29 +1,29 @@
-@require '../css/base';
+@require '../css/base'
 
 .{$-cui-class-prefix}-tag
-    display: inline-block;
-    width: 0;
-    padding: 0;
-    margin: 0;
-    background: #f3f3f3;
-    font-size: 14px;
-    -webkit-transition: all .3s cubic-bezier(.78,.14,.15,.86);
-    transition: all .3s cubic-bezier(.78,.14,.15,.86);
-    transform: scale(0);
-    opacity: 1;
-    cursor: pointer;
-    white-space: nowrap;
+    display: inline-block
+    padding: 8px 10px
+    margin-right: 10px
+    background: #f3f3f3
+    font-size: 14px
+    white-space: nowrap
+    border: 1px solid #f3f3f3
+    cursor: default
 
-    &.show
-        width: auto;
-        padding: 8px 12px;
-        margin: 0 8px 8px 0;
-        transform: scale(1);
+    &.clickable
+        cursor: pointer
+
+    &.checked
+        background: $-cui-main-color
+        border-color: $-cui-main-color
+        color: #fff
 
     &-close
-        margin-left: 5px;
-        opacity: .5;
-        font-size: 14px;
+        margin-left: 5px
+        opacity: .5
+        font-size: 14px
+        size: 14px
+        cursor: pointer
 
         &:hover
-            opacity: 1;
+            opacity: 1

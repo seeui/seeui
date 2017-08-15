@@ -11,11 +11,11 @@ import {h, Component, render} from 'preact';
 import ButtonDemo from '../src/button/ButtonDemo';
 import ButtonMd from '../src/button/Button.md';
 
-import PagerDemo from '../src/Pager/PagerDemo';
-import PagerMd from '../src/Pager/Pager.md';
+import PagerDemo from '../src/pager/PagerDemo';
+import PagerMd from '../src/pager/Pager.md';
 
-import TabsDemo from '../src/Tabs/TabsDemo';
-import TabsMd from '../src/Tabs/Tabs.md';
+import TabsDemo from '../src/tabs/TabsDemo';
+import TabsMd from '../src/tabs/Tabs.md';
 
 import IconDemo from '../src/icon/IconDemo';
 import IconMd from '../src/icon/Icon.md';
@@ -95,42 +95,42 @@ export default class Index extends Component {
                     </nav>
                     <div className="panel-wrap">
                         <Panel>
-                            <h2 id="button">Button 按钮</h2>
+                            <h2 className="panel-header" id="button">Button 按钮</h2>
                             <ButtonDemo />
                             <MdContainer>{ButtonMd}</MdContainer>
                         </Panel>
                         <Panel>
-                            <h2 id="dialog">Dialog 浮层</h2>
+                            <h2 className="panel-header" id="dialog">Dialog 浮层</h2>
                             <DialogDemo />
                             <MdContainer>{DialogMd}</MdContainer>
                         </Panel>
                         <Panel>
-                            <h2 id="pager">Pager 翻页</h2>
+                            <h2 className="panel-header" id="pager">Pager 翻页</h2>
                             <PagerDemo />
                             <MdContainer>{PagerMd}</MdContainer>
                         </Panel>
                         <Panel>
-                            <h2 id="tabs">Tabs 标签</h2>
+                            <h2 className="panel-header" id="tabs">Tabs 标签</h2>
                             <TabsDemo />
                             <MdContainer>{TabsMd}</MdContainer>
                         </Panel>
                         <Panel>
-                            <h2 id="icon">Icon 图标</h2>
+                            <h2 className="panel-header" id="icon">Icon 图标</h2>
                             <IconDemo />
                             <MdContainer>{IconMd}</MdContainer>
                         </Panel>
                         <Panel>
-                            <h2 id="input">Input 输入框</h2>
+                            <h2 className="panel-header" id="input">Input 输入框</h2>
                             <InputDemo />
                             <MdContainer>{InputMd}</MdContainer>
                         </Panel>
                         <Panel>
-                            <h2 id="rate">Rate 打分</h2>
+                            <h2 className="panel-header" id="rate">Rate 打分</h2>
                             <RateDemo />
                             <MdContainer>{RateMd}</MdContainer>
                         </Panel>
                         <Panel>
-                            <h2 id="tag">Tag 标签</h2>
+                            <h2 className="panel-header" id="tag">Tag 标签</h2>
                             <TagDemo />
                             <MdContainer>{TagMd}</MdContainer>
                         </Panel>

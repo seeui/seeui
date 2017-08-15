@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["dialog/SingleToast.js"],"sourcesContent":["/**\n * @file Single Dialog\n * @author cgzero(cgzero@cgzero.com)\n * @data 2017-08-14\n */\n\nimport Toast from './Toast';\nimport Singleton from '../util/Singleton';\n\nexport default new Singleton(Toast);\n"],"file":"SingleToast.js"}

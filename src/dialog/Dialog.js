@@ -12,8 +12,6 @@ import {map} from '../util/lang';
 import Button from '../button/Button';
 import Icon from '../icon/Icon';
 
-import Singleton from '../util/Singleton';
-
 import './Dialog.styl';
 
 export default class Dialog extends Component {
@@ -117,7 +115,7 @@ export default class Dialog extends Component {
 
         return (
             <span
-                onClick={e => onHide({type: 'closeClick'})}
+                onClick={() => onHide({type: 'closeClick'})}
                 className={`${prefixCls}-dialog-close`}
             >
                 {closeContent ? closeContent : <Icon type="close" />}
@@ -170,7 +168,7 @@ export default class Dialog extends Component {
 
         const dialogCls = classNames({
             [`${prefixCls}-dialog`]: true,
-            'show': show,
+            show: show,
             [className]: className
         });
 
@@ -197,5 +195,3 @@ export default class Dialog extends Component {
         );
     }
 }
-
-export const SingleDialog = new Singleton(Dialog);

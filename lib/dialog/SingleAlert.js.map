@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["dialog/SingleAlert.js"],"sourcesContent":["/**\n * @file Single Alert\n * @author cgzero(cgzero@cgzero.com)\n * @data 2017-08-14\n */\n\nimport Alert from './Alert';\nimport Singleton from '../util/Singleton';\n\nexport default new Singleton(Alert);\n"],"file":"SingleAlert.js"}

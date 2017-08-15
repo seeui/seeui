@@ -5,10 +5,7 @@
  */
 
 import {h, Component} from 'preact';
-import classNames from '../util/classnames';
 import Dialog from './Dialog';
-
-import Singleton from '../util/Singleton';
 
 export default class Toast extends Component {
 
@@ -54,12 +51,9 @@ export default class Toast extends Component {
         this.props.onHide && this.props.onHide(data);
     }
 
-
     componentWillReceiveProps(nextProps) {
-        const {remain} = nextProps;
-
         this.setState({
-            remain: remain || this.state.remain
+            remain: nextProps.remain || this.state.remain
         });
     }
 
@@ -74,10 +68,7 @@ export default class Toast extends Component {
                 onHide={this.onToastHide.bind(this)}
             >
                 {children}
-                <div className="cui-dialog-count-down">{this.state.remain}s</div>
             </Dialog>
         );
     }
 }
-
-export const SingleToast = new Singleton(Toast);

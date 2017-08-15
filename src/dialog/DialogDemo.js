@@ -4,8 +4,16 @@
  * @data 2017-07-15
  */
 
+/* eslint-disable no-console */
 import {h, Component} from 'preact';
-import {Button, Toast, Alert, Confirm, SingleToast, SingleDialog, SingleConfirm, SingleAlert} from '../index';
+import Button from '../button/Button';
+import Toast from './Toast';
+import Alert from './Alert';
+import Confirm from './Confirm';
+import SingleToast from './SingleToast';
+import SingleDialog from './SingleDialog';
+import SingleConfirm from './SingleConfirm';
+import SingleAlert from './SingleAlert';
 
 export default class DialogDemo extends Component {
     constructor(props) {

@@ -2,6 +2,7 @@
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
-closable | 是否可以关闭 | boolean | false
-color | 16进制背景色 | string | -
-onClose | 关闭标签handler | Funciton | -
+hasClose | 是否可以关闭 | boolean | false
+onClose | 关闭标签 handler | Funciton | -
+onClick | 点击标签 hanlder | Funciton | -
+isChecked | 是否可选中 | boolean | false

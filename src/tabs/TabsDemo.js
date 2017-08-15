@@ -5,7 +5,8 @@
  */
 
 import {h, Component} from 'preact';
-import {Tabs, Tab} from '../index';
+import Tabs from './Tabs';
+import Tab from './Tab';
 
 import './TabsDemo.styl';
 
@@ -14,7 +15,7 @@ export default class TabsDemo extends Component {
     render() {
         return (
             <div className="tabs-demo">
-                <h3>默认</h3>
+                <h3 className="panel-header">默认</h3>
                 <Tabs
                     selectedIndex={this.state.index1}
                     onChange={tab => {
@@ -41,7 +42,7 @@ export default class TabsDemo extends Component {
                     <Tab label="新闻"/>
                 </Tabs>
                 <br />
-                <h3>选中指定tab & 禁用选中动画</h3>
+                <h3 className="panel-header">选中指定tab & 禁用选中动画</h3>
                 <Tabs
                     selectedIndex={this.state.index3 !== undefined ? this.state.index3 : 1}
                     onChange={tab => {
@@ -56,7 +57,7 @@ export default class TabsDemo extends Component {
                     <Tab label="新闻"/>
                 </Tabs>
                 <br />
-                <h3>hover动画</h3>
+                <h3 className="panel-header">hover动画</h3>
                 <Tabs
                     selectedIndex={this.state.index4}
                     onChange={tab => {

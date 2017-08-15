@@ -1,6 +1,7 @@
 /**
  * @file Tag
  * @author zhaiwanli
+ * @author cgzero(cgzero@cgzero.com)
  * @data 2017-07-25
  */
 
@@ -21,30 +22,27 @@ export default class Tag extends Component {
         closable: false
     };
 
-    state = {
-        show: true
-    };
-
-    handleClick(e) {
-        if (this.props.closable) {
-            this.setState({
-                show: false
-            });
-        }
+    handleCloseClick(e) {
         if (this.props.onClose) {
             this.props.onClose(e);
         }
     }
 
+    handleClick(e) {
+        if (this.props.onClick) {
+            this.props.onClick(e);
+        }
+    }
+
     render() {
-        const {prefixCls, closable, color, onClose} = this.props;
+        const {prefixCls, hasClose, isChecked, onClick} = this.props;
 
         const tagCls = classNames({
             [`${prefixCls}-tag`]: true,
-            'show': this.state.show
+            show: this.state.show,
+            checked: isChecked,
+            clickable: onClick
         });
-
-        const tagStyle = color ? `background:${color};color:#fff;border-color:${color}` : '';
 
         const closeCls = classNames({
             [`${prefixCls}-tag-close`]: true,
@@ -52,13 +50,20 @@ export default class Tag extends Component {
             'cui-i-close': true
         });
 
+        // TODO 根据是否传 href 属性判断是否变为 a 标签
+
         return (
-            <div className={tagCls} style={tagStyle}>
-                {this.props.children}
+            <div className={tagCls}>
+                <span
+                    className={`${prefixCls}-tag-body`}
+                    onClick={e => this.handleClick(e)}
+                >
+                    {this.props.children}
+                </span>
                 {
-                    closable
-                    ? <span className={closeCls} onClick={e => this.handleClick(e)}></span>
-                    : ''
+                    hasClose
+                        ? <span className={closeCls} onClick={e => this.handleCloseClick(e)}></span>
+                        : ''
                 }
             </div>
         );

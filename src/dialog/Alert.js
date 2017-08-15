@@ -9,7 +9,6 @@ import {h, Component} from 'preact';
 import classNames from '../util/classnames';
 
 import Dialog from './Dialog';
-import Singleton from '../util/Singleton';
 
 let defaultButton = {
     type: 'primary',
@@ -35,7 +34,7 @@ export default class Alert extends Component {
         let dialogButtons = [{
             ...defaultButton,
             ...button,
-            onClick: () => {
+            onClick() {
                 onConfirm && onConfirm();
             }
         }];
@@ -51,5 +50,3 @@ export default class Alert extends Component {
         );
     }
 }
-
-export const SingleAlert = new Singleton(Alert);

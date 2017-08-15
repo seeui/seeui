@@ -236,7 +236,7 @@ export default class Pager extends Component {
      */
 
     render() {
-        const {prefixCls, total, first, padding, showCount, useLang, showAlways, className, ...others} = this.props;
+        const {prefixCls, total, first, padding, showCount, showAlways, className, ...others} = this.props;
         let page = this.state.page;
         let showCountNew = showCount > total ? total : showCount;
 
