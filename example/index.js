@@ -11,11 +11,11 @@ import {h, Component, render} from 'preact';
 import ButtonDemo from '../src/button/ButtonDemo';
 import ButtonMd from '../src/button/Button.md';
 
-import PagerDemo from '../src/Pager/PagerDemo';
-import PagerMd from '../src/Pager/Pager.md';
+import PagerDemo from '../src/pager/PagerDemo';
+import PagerMd from '../src/pager/Pager.md';
 
-import TabsDemo from '../src/Tabs/TabsDemo';
-import TabsMd from '../src/Tabs/Tabs.md';
+import TabsDemo from '../src/tabs/TabsDemo';
+import TabsMd from '../src/tabs/Tabs.md';
 
 import IconDemo from '../src/icon/IconDemo';
 import IconMd from '../src/icon/Icon.md';

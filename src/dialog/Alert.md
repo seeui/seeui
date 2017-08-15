@@ -2,7 +2,6 @@
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
-prefixCls | 类名前缀 | string | `cui`
 width | 内容宽度，需要携带单位 | string | -
 close | 是否有关闭按钮 | boolean | `true`
 closeContent | 关闭按钮内容 | string/jsx | `x`

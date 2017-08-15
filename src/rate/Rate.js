@@ -28,7 +28,7 @@ export default class Rate extends Component {
         };
     }
 
-    componentWillReceiveProps(nextProps, nextContext) {
+    componentWillReceiveProps(nextProps) {
         this.setState({
             num: +nextProps.num
         });
@@ -53,9 +53,7 @@ export default class Rate extends Component {
      * @param {number} num 当前被进入的子项编号
      */
     rateMouseOver(num) {
-        this.setState({
-            num: num
-        });
+        this.setState({num});
 
         this.props.onRateOver && this.props.onRateOver(num);
     }

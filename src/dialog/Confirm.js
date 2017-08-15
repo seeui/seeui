@@ -44,7 +44,7 @@ export default class Confirm extends Component {
 
         // 配置buttons，必须传role参数
         let dialogButtons = map(
-            buttons.length ? buttons : [defaultButtons['confirm'], defaultButtons['cancel']],
+            buttons.length ? buttons : [defaultButtons.confirm, defaultButtons.cancel],
             button => {
                 let role = button.role;
                 let defaultButton = defaultButtons[role];
@@ -52,11 +52,11 @@ export default class Confirm extends Component {
                 return {
                     ...defaultButton,
                     button,
-                    onClick: () => {
+                    onClick() {
                         role === 'confirm' && onConfirm && onConfirm();
                         role === 'cancel' && onCancel && onCancel();
                     }
-                }
+                };
             }
         );
 

@@ -4,6 +4,7 @@
  * @data 2017-07-15
  */
 
+/* eslint-disable no-console */
 import {h, Component} from 'preact';
 import Button from '../button/Button';
 import Toast from './Toast';

@@ -1,3 +1,9 @@
+/**
+ * @file Index
+ * @author cgzero(cgzero@cgzero.com)
+ * @date 2017-08-14
+ */
+
 import Button from './button/Button';
 import Pager from './pager/Pager';
 import Tab from './tabs/Tab';

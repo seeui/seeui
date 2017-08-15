@@ -22,7 +22,7 @@
   background: #fff;
 }
 .cui-dialog-header {
-  margin: 25px 0 10px;
+  margin: 5px 0 0 0;
   font-size: 22px;
   text-align: center;
 }
@@ -34,11 +34,10 @@
   cursor: pointer;
 }
 .cui-dialog-body {
-  max-height: 70px;
-  margin: 15px 0;
-  font-size: 14px;
+  margin: 10px 0;
+  font-size: 16px;
   overflow: hidden;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 .cui-dialog-footer {
   zoom: 1;
@@ -54,7 +53,4 @@
 .cui-dialog-footer-item {
   float: right;
   margin-left: 5px;
-}
-.cui-dialog-count-down {
-  text-align: right;
 }
