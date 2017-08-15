@@ -55,6 +55,7 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "kolor": "^1.1.9",
     "preact": "^8.1.0",
     "preact-compat": "^3.16.0"
   }
