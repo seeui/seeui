@@ -32,11 +32,11 @@ export default class Button extends Component {
     render() {
         const {prefixCls, type, size, disabled, children, className, ...others} = this.props;
 
-        const showType = (type === 'primary' || type === 'default') ? type : 'primary';
+        // const showType = (type === 'primary' || type === 'default') ? type : 'primary';
 
         const cls = classNames({
             [`${prefixCls}-button`]: true,
-            [showType]: showType,
+            [type]: type,
             [size]: size,
             disabled: disabled,
             [className]: className
