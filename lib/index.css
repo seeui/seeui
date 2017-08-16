@@ -20,6 +20,9 @@
   -o-transition: all 0.1s;
   -ms-transition: all 0.1s;
   transition: all 0.1s;
+  color: #fff;
+  background-color: #38f;
+  border-color: #38f;
 }
 .cui-button.small {
   height: 28px;
