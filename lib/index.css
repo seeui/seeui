@@ -236,7 +236,8 @@
 }
 @font-face {
   font-family: "seeui-mobile-icon";
-  src: url("icon/font/icon.woff?t=1499157214944") format('woff'), url("icon/font/icon.ttf?t=1499157214944") format('truetype'), url("icon/font/icon.svg?t=1499157214944#seeui-mobile-icon") format('svg') /* iOS 4.1- */;
+  src: url("icon/font/icon.eot") /* ie 8- */;
+  src: url("icon/font/icon.eot?t=1499157214944#iefix") format('embedded-opentype'), url("icon/font/icon.woff?t=1499157214944") format('woff'), url("icon/font/icon.ttf?t=1499157214944") format('truetype'), url("icon/font/icon.svg?t=1499157214944#seeui-mobile-icon") format('svg') /* iOS 4.1- */;
 }
 .cui-icon {
   font-family: "seeui-mobile-icon" !important;
