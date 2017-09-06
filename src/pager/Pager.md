@@ -14,4 +14,5 @@ lang | 文字配置 | Object | -
 lang.prev | 上一页 | string | 上一页
 lang.next | 下一页 | string | 下一页
 lang.ellipsis | 省略 | string | ..
+onChange | 点击事件 | Function | -
 className | 额外类名 | string | -

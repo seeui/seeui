@@ -97,7 +97,7 @@ export default class Rate extends Component {
                     onMouseOver={() => disabled || hasHover && this.rateMouseOver(index)}
                     onMouseLeave={() => disabled || hasHover && this.rateMouseLeave()}
                 >
-                    {rateContent ? rateContent : <Icon type="favor-fill" size={size || '16'} />}
+                    {rateContent ? rateContent : <Icon type="favor-fill" style={{fontSize: size + 'px' || '16px'}} />}
                 </span>
             );
         }

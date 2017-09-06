@@ -6,6 +6,7 @@
 import {h, Component} from 'preact';
 import Icon from '../icon/Icon';
 import classNames from '../util/classnames';
+import {map} from '../util/lang';
 
 import './Pager.styl';
 
@@ -77,9 +78,6 @@ export default class Pager extends Component {
          * @type {Object}
          */
         this.state = {page};
-
-        this.onMainClick = this.onMainClick.bind(this);
-
     }
 
     /**
@@ -221,8 +219,8 @@ export default class Pager extends Component {
         // 被控制的
         if (onChange) {
             onChange({
-                target: this,
-                page: page
+                target,
+                page
             });
             return;
         }
@@ -304,7 +302,7 @@ export default class Pager extends Component {
             }
         ];
 
-        const result = full.map(conf => {
+        const result = map(full, conf => {
 
             if (typeof conf === 'number') {
                 const part = conf >= 0 ? '' : 'ellipsis';
@@ -327,7 +325,7 @@ export default class Pager extends Component {
         });
 
         return (
-            <ul className={cls} onClick={this.onMainClick} {...others}>
+            <ul className={cls} onClick={e => this.onMainClick(e)} {...others}>
                 {result}
             </ul>
         );

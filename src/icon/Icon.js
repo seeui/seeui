@@ -33,8 +33,7 @@ export default class Icon extends Component {
             <i style={style}
                 className={cls}
                 {...others}
-            >
-            </i>
+            />
         );
     }
 }

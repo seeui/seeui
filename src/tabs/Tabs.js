@@ -7,6 +7,7 @@
 import {h, Component, cloneElement} from 'preact';
 import classNames from '../util/classnames';
 import {setStyle, query, closest} from '../util/dom';
+import {map} from '../util/lang';
 
 import Tab from './Tab';
 
@@ -30,10 +31,6 @@ export default class Tabs extends Component {
             selectedIndex,
             hasAnimate: false
         };
-
-        this.onTabClick = this.onTabClick.bind(this);
-        this.onMouseOver = this.onMouseOver.bind(this);
-        this.onMouseLeave = this.onMouseLeave.bind(this);
     }
 
     static defaultProps = {
@@ -148,7 +145,7 @@ export default class Tabs extends Component {
 
         let selectedIndex = this.state.selectedIndex;
 
-        let tabs = children.map((tab, index) => {
+        let tabs = map(children, (tab, index) => {
 
             let selected = selectedIndex === index;
 
@@ -158,9 +155,9 @@ export default class Tabs extends Component {
                     key: index,
                     selected: selected,
                     index: index,
-                    onClick: this.onTabClick,
-                    onMouseOver: this.onMouseOver,
-                    onMouseLeave: this.onMouseLeave
+                    onClick: (e, index) => this.onTabClick(e, index),
+                    onMouseOver: e => this.onMouseOver(e),
+                    onMouseLeave: e => this.onMouseLeave(e)
                 }
             );
         });
@@ -187,7 +184,7 @@ export default class Tabs extends Component {
                                     <div
                                         className={inkBarCls}
                                         ref={node => this.line = node}
-                                    ></div>
+                                    />
                                     {tabs}
                                 </div>
                             </div>

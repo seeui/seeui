@@ -8,7 +8,7 @@
 // ****************************************************
 // *                      css                         *
 // ****************************************************
-let getComputedStyle = document.defaultView.getComputedStyle;
+let getComputedStyle = document.defaultView && document.defaultView.getComputedStyle || window.getComputedStyle;
 
 /**
  * 将CSS属性驼峰化
