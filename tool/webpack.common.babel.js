@@ -11,7 +11,6 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 export default {
     // 页面入口文件配置
     entry: [
-        'babel-polyfill',
         path.resolve(__dirname, '../example/index.js')
     ],
     // output 项告诉 webpack 怎样存储输出结果以及存储到哪里
