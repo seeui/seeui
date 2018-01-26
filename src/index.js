@@ -21,6 +21,8 @@ import Confirm from './dialog/Confirm';
 import SingleConfirm from './dialog/SingleConfirm';
 import Tag from './tag/Tag';
 
+import Singleton from './util/Singleton';
+
 export {
     Button,
     Pager,
@@ -37,5 +39,7 @@ export {
     SingleAlert,
     Confirm,
     SingleConfirm,
-    Tag
+    Tag,
+    // 工具函数
+    Singleton
 };
